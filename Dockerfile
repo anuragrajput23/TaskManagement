@@ -8,14 +8,17 @@ COPY frontend/ ./
 RUN npm ci && npm run build
 
 # --- Build backend (install deps) ---
-FROM node:18-alpine AS backend-build
+FROM node:18-bullseye-slim AS backend-build
 WORKDIR /app/backend
 COPY backend/package.json backend/package-lock.json ./
 COPY backend/ ./
-RUN npm ci --production
+RUN apt-get update && apt-get install -y python3 make g++ && \
+    npm ci --production && \
+    apt-get purge -y python3 make g++ && \
+    rm -rf /var/lib/apt/lists/*
 
 # --- Final image ---
-FROM node:18-alpine
+FROM node:18-bullseye-slim
 WORKDIR /app
 
 # copy built frontend and backend

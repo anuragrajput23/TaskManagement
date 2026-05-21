@@ -1,26 +1,27 @@
-import { DatabaseSync } from 'node:sqlite';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import Database from "better-sqlite3";
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const dataDir = path.join(__dirname, '..', 'data');
-const dbPath = path.join(dataDir, 'tasks.db');
+const dataDir = path.join(__dirname, "..", "data");
+const dbPath = path.join(dataDir, "tasks.db");
 
 if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
-const db = new DatabaseSync(dbPath, { enableForeignKeyConstraints: true });
+const db = new Database(dbPath, { fileMustExist: false });
+db.pragma("foreign_keys = ON");
 
 db.transaction = function transaction(fn) {
-  db.exec('BEGIN');
+  db.exec("BEGIN");
   try {
     const result = fn();
-    db.exec('COMMIT');
+    db.exec("COMMIT");
     return result;
   } catch (err) {
-    db.exec('ROLLBACK');
+    db.exec("ROLLBACK");
     throw err;
   }
 };
