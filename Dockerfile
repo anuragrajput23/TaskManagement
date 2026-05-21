@@ -30,4 +30,4 @@ COPY --from=backend-build /app/backend ./backend
 WORKDIR /app/backend
 ENV NODE_ENV=production
 EXPOSE 5000
-CMD ["node", "src/index.js"]
+CMD ["sh", "-c", "node src/seed.js && node src/index.js"]
