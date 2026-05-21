@@ -260,7 +260,7 @@ This project  is deployed easily using:
 
 # 👨‍💻 Author
 
-Pritam Kumar
+Anurag Kumar
 
 ---
 
