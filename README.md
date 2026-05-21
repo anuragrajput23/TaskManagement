@@ -7,18 +7,21 @@ A modern full-stack web application where teams can create projects, assign task
 # 📌 Features
 
 ## 🔐 Authentication
+
 - User Registration & Login
 - JWT Authentication
 - Secure Password Hashing using bcrypt
 - Protected Routes
 
 ## 📁 Project Management
+
 - Create Projects
 - Update & Delete Projects
 - Add Team Members
 - Assign Roles (Admin / Member)
 
 ## ✅ Task Management
+
 - Create Tasks
 - Assign Tasks to Members
 - Update Task Status
@@ -26,6 +29,7 @@ A modern full-stack web application where teams can create projects, assign task
 - Track Progress
 
 ## 📊 Dashboard
+
 - Total Tasks
 - Completed Tasks
 - Pending Tasks
@@ -33,13 +37,16 @@ A modern full-stack web application where teams can create projects, assign task
 - Recent Activities
 
 ## 🛡️ Role-Based Access Control (RBAC)
+
 ### Admin
+
 - Manage Projects
 - Manage Members
 - Delete Any Task
 - Update Project Details
 
 ### Member
+
 - View Assigned Projects
 - Create & Update Tasks
 - Track Task Progress
@@ -48,13 +55,13 @@ A modern full-stack web application where teams can create projects, assign task
 
 # 🛠️ Tech Stack
 
-| Layer | Technology |
-|-------|------------|
-| Frontend | React.js, Vite, React Router |
-| Backend | Node.js, Express.js |
-| Database | SQLite (`node:sqlite`) |
-| Authentication | JWT + bcrypt |
-| Validation | express-validator |
+| Layer          | Technology                   |
+| -------------- | ---------------------------- |
+| Frontend       | React.js, Vite, React Router |
+| Backend        | Node.js, Express.js          |
+| Database       | SQLite (`node:sqlite`)       |
+| Authentication | JWT + bcrypt                 |
+| Validation     | express-validator            |
 
 ---
 
@@ -151,10 +158,10 @@ This repo is prepared for Render using the included `Dockerfile`.
 
 # �🔑 Demo Accounts
 
-| Email | Password | Role |
-|-------|----------|------|
-| alice@example.com | password123 | Admin |
-| bob@example.com | password123 | Member |
+| Email             | Password    | Role   |
+| ----------------- | ----------- | ------ |
+| alice@example.com | password123 | Admin  |
+| bob@example.com   | password123 | Member |
 | carol@example.com | password123 | Member |
 
 ---
@@ -163,53 +170,53 @@ This repo is prepared for Render using the included `Dockerfile`.
 
 ## Authentication
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| POST | `/api/auth/register` | Register User |
-| POST | `/api/auth/login` | Login User |
-| GET | `/api/auth/me` | Get Current User |
+| Method | Endpoint             | Description      |
+| ------ | -------------------- | ---------------- |
+| POST   | `/api/auth/register` | Register User    |
+| POST   | `/api/auth/login`    | Login User       |
+| GET    | `/api/auth/me`       | Get Current User |
 
 ---
 
 ## Dashboard
 
-| Method | Endpoint |
-|--------|----------|
-| GET | `/api/dashboard` |
+| Method | Endpoint         |
+| ------ | ---------------- |
+| GET    | `/api/dashboard` |
 
 ---
 
 ## Projects
 
-| Method | Endpoint |
-|--------|----------|
-| GET | `/api/projects` |
-| POST | `/api/projects` |
-| GET | `/api/projects/:id` |
-| PUT | `/api/projects/:id` |
+| Method | Endpoint            |
+| ------ | ------------------- |
+| GET    | `/api/projects`     |
+| POST   | `/api/projects`     |
+| GET    | `/api/projects/:id` |
+| PUT    | `/api/projects/:id` |
 | DELETE | `/api/projects/:id` |
 
 ---
 
 ## Members
 
-| Method | Endpoint |
-|--------|----------|
-| GET | `/api/projects/:id/members` |
-| POST | `/api/projects/:id/members` |
-| PATCH | `/api/projects/:id/members/:userId` |
+| Method | Endpoint                            |
+| ------ | ----------------------------------- |
+| GET    | `/api/projects/:id/members`         |
+| POST   | `/api/projects/:id/members`         |
+| PATCH  | `/api/projects/:id/members/:userId` |
 | DELETE | `/api/projects/:id/members/:userId` |
 
 ---
 
 ## Tasks
 
-| Method | Endpoint |
-|--------|----------|
-| GET | `/api/projects/:id/tasks` |
-| POST | `/api/projects/:id/tasks` |
-| PATCH | `/api/tasks/:taskId` |
-| DELETE | `/api/tasks/:taskId` |
+| Method | Endpoint                  |
+| ------ | ------------------------- |
+| GET    | `/api/projects/:id/tasks` |
+| POST   | `/api/projects/:id/tasks` |
+| PATCH  | `/api/tasks/:taskId`      |
+| DELETE | `/api/tasks/:taskId`      |
 
 ---
 
@@ -259,22 +266,11 @@ todo → in_progress → done
 
 # 🚀 Deployment
 
-This project  is deployed easily using:
+This project is deployed easily using:
 
 - Railway
 
-
 ---
-
-
-
-
-
-
-
-
-
-
 
 ---
 
