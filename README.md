@@ -129,7 +129,27 @@ http://localhost:5173
 
 ---
 
-# 🔑 Demo Accounts
+# � Deploy on Render
+
+This repo is prepared for Render using the included `Dockerfile`.
+
+1. Connect your GitHub repo: `anuragrajput23/TaskManagement`.
+2. Create a new Web Service and choose:
+   - Environment: `Docker`
+   - Branch: `main`
+   - Dockerfile Path: `Dockerfile`
+3. Add environment variables:
+   - `PORT=5000`
+   - `JWT_SECRET=<your-secret>`
+   - `CLIENT_URL=https://<your-render-url>`
+4. Optionally add a persistent disk mounted at `/app/backend/data` for SQLite data.
+5. Deploy and verify the app URL.
+
+> If Render asks for build/start commands, no extra commands are needed because the Dockerfile handles both build and runtime.
+
+---
+
+# �🔑 Demo Accounts
 
 | Email | Password | Role |
 |-------|----------|------|
