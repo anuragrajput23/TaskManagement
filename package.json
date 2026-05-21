@@ -1,0 +1,15 @@
+{
+  "name": "task-management",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "build": "npm --workspace frontend run build",
+    "start": "npm --workspace backend start"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
